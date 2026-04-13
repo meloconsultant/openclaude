@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why Dogs Make Better Pets Than Cats - DEBATE MODE</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+    :root {
+      --accent: #2563eb;
+      --surface: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f3f4f6;
+      color: var(--text);
+      min-height: 100vh;
+      overflow: hidden; /* Prevent body scroll in performance mode */
+    }
+
+    .slide {
+      display: none;
+      opacity: 0;
+      transition: opacity 280ms ease-in-out;
+    }
+
+    .slide.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .focus-ring:focus-visible {
+      outline: 3px solid #93c5fd;
+      outline-offset: 2px;
+    }
+
+    /* Animation for title slide visual */
+    @keyframes bounce-slow {
+      0%, 100% { transform: translateY(-15%); animation-timing-function: cubic-bezier(0.8,0,1,1); }
+      50% { transform: none; animation-timing-function: cubic-bezier(0,0,0.2,1); }
+    }
+    .animate-bounce-slow {
+      animation: bounce-slow 1.5s infinite;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* Custom Scrollbar for slide content if needed */
+    #slides-container::-webkit-scrollbar { width: 6px; }
+    #slides-container::-webkit-scrollbar-track { background: transparent; }
+    #slides-container::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+  </style>
+</head>
+<body class="h-screen w-screen flex flex-col p-2 sm:p-4">
+
+  <main class="flex-grow relative bg-white shadow-2xl overflow-hidden rounded-xl flex flex-col" aria-label="Slides presentation">
+
+    <!-- Progress Bar -->
+    <div class="h-1.5 w-full bg-gray-100" aria-hidden="true">
+      <div id="progress-bar" class="h-1.5 bg-blue-600 transition-all duration-300" style="width:12.5%"></div>
+    </div>
+
+    <!-- Slides Container -->
+    <div id="slides-container" class="flex-grow relative w-full h-full p-6 sm:p-12 pb-24 overflow-y-auto">
+
+      <!-- SLIDE 1: TITLE -->
+      <section class="slide active flex-col items-center justify-center h-full text-center" data-slide="1" aria-hidden="false">
+        <div class="inline-block px-4 py-1 mb-6 rounded-full bg-blue-100 text-blue-800 font-semibold text-sm sm:text-base">An 8th-grade debate-style presentation</div>
+        <h1 class="text-4xl sm:text-6xl font-bold text-gray-900 mb-6 leading-tight">Why Dogs Make <span class="text-blue-600">Better Pets</span> Than Cats</h1>
+        <p class="text-xl sm:text-2xl text-gray-600 mb-12">Team Dog: the case for the ultimate pet</p>
+        <div class="flex items-center justify-center space-x-12 text-7xl" aria-label="Visual: Dog icon vs Cat icon">
+          <div class="text-blue-500 animate-bounce-slow"><i class="fa-solid fa-dog" aria-hidden="true"></i></div>
+          <div class="text-3xl font-bold text-gray-400 italic">vs</div>
+          <div class="text-gray-400"><i class="fa-solid fa-cat" aria-hidden="true"></i></div>
+        </div>
+      </section>
+
+      <!-- SLIDE 2: COMPANIONSHIP -->
+      <section class="slide flex-col justify-center h-full max-w-4xl mx-auto" data-slide="2" aria-hidden="true">
+        <h2 class="text-blue-600 font-bold tracking-wider uppercase text-sm mb-2">Stronger Connection</h2>
+        <h1 class="text-3xl sm:text-5xl font-bold text-gray-900 mb-8 leading-tight">Dogs bring stronger everyday companionship</h1>
+        <div class="bg-blue-50 border-l-4 border-blue-600 p-6 mb-8 rounded-r-lg"><p class="text-xl sm:text-2xl font-semibold italic text-gray-700">Dogs don't just live in your house — they live life with you.</p></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <ul class="space-y-4 text-lg sm:text-xl text-gray-700 list-disc pl-6 marker:text-green-500">
+                <li>Dogs are loyal and loving</li>
+                <li>They pay attention to people and often want to be near them</li>
+                <li>They comfort people when they feel sad or stressed</li>
+                <li>They often act like a best friend, not just a pet</li>
+            </ul>
+            <div class="flex flex-col items-center gap-2 bg-gray-50 p-6 rounded-xl border">
+                <i class="fa-solid fa-child-reaching text-6xl text-blue-400 mb-2"></i>
+                <div class="flex gap-4 text-center font-bold text-gray-600">
+                    <span class="px-3 py-1 bg-white rounded shadow text-sm">LOYAL</span>
+                    <span class="px-3 py-1 bg-white rounded shadow text-sm">LOVING</span>
+                    <span class="px-3 py-1 bg-white rounded shadow text-sm">ALWAYS THERE</span>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 3: ACTIVE -->
+      <section class="slide flex-col justify-center h-full max-w-4xl mx-auto" data-slide="3" aria-hidden="true">
+        <h2 class="text-blue-600 font-bold tracking-wider uppercase text-sm mb-2">Healthy Lifestyles</h2>
+        <h1 class="text-3xl sm:text-5xl font-bold text-gray-900 mb-8 leading-tight">Dogs get kids off screens and outside</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">A dog turns exercise into part of daily life:</h3>
+            <ul class="space-y-3 text-lg text-gray-700 list-disc pl-6 marker:text-blue-500">
+                <li>Dogs need walks, playtime, and outside time</li>
+                <li>That means kids and families move more</li>
+                <li>Walking a dog can help build healthy habits</li>
+                <li>Dogs make exercise feel fun, not like homework</li>
+            </ul>
+          </div>
+          <div class="bg-gray-900 text-white p-8 rounded-xl shadow-lg text-center transform rotate-1">
+            <i class="fa-solid fa-shoe-prints text-4xl text-blue-400 mb-4"></i>
+            <h4 class="text-xl text-gray-300 font-bold mb-2">Mini Stat Callout</h4>
+            <p class="text-3xl font-extrabold text-white mb-2">42.3%</p>
+            <p class="text-sm text-gray-300">of dog walkers got 30+ minutes of walking in a day from dog walks.</p>
+            <p class="text-xs text-gray-500 mt-4">- CDC data</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 4: TRAINING -->
+      <section class="slide flex-col justify-center h-full max-w-4xl mx-auto" data-slide="4" aria-hidden="true">
+        <h2 class="text-blue-600 font-bold tracking-wider uppercase text-sm mb-2">Integration</h2>
+        <h1 class="text-3xl sm:text-5xl font-bold text-gray-900 mb-8 leading-tight">Dogs are easier to train into family life</h1>
+        <p class="text-xl text-gray-600 mb-8">Dogs learn the rules of the house.</p>
+
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-4 text-center mb-8">
+            <div class="p-4 bg-white border-2 border-gray-100 rounded-lg shadow-sm"><i class="fa-solid fa-check text-2xl text-green-500 mb-2"></i><p class="font-bold text-sm">Sit</p></div>
+            <div class="p-4 bg-white border-2 border-gray-100 rounded-lg shadow-sm"><i class="fa-solid fa-check text-2xl text-green-500 mb-2"></i><p class="font-bold text-sm">Stay</p></div>
+            <div class="p-4 bg-white border-2 border-gray-100 rounded-lg shadow-sm"><i class="fa-solid fa-check text-2xl text-green-500 mb-2"></i><p class="font-bold text-sm">Walk</p></div>
+            <div class="p-4 bg-white border-2 border-gray-100 rounded-lg shadow-sm"><i class="fa-solid fa-check text-2xl text-green-500 mb-2"></i><p class="font-bold text-sm">Routine</p></div>
+            <div class="p-4 bg-white border-2 border-gray-100 rounded-lg shadow-sm col-span-2 md:col-span-1"><i class="fa-solid fa-check text-2xl text-green-500 mb-2"></i><p class="font-bold text-sm">Family Teamwork</p></div>
+        </div>
+
+        <div class="text-center bg-blue-50 p-6 rounded-lg text-blue-800 border-2 border-blue-200">
+            <h3 class="text-xl font-bold mb-2">Key line:</h3>
+            <p class="text-lg font-medium">A trained dog can match a family schedule better than a pet that mostly does its own thing.</p>
+        </div>
+      </section>
+
+      <!-- SLIDE 5: MENTAL HEALTH -->
+      <section class="slide flex-col justify-center h-full max-w-4xl mx-auto" data-slide="5" aria-hidden="true">
+        <h2 class="text-blue-600 font-bold tracking-wider uppercase text-sm mb-2">Emotional Support</h2>
+        <h1 class="text-3xl sm:text-5xl font-bold text-gray-900 mb-8 leading-tight">Dogs help lower stress and loneliness</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">Sometimes the best support has four paws.</h3>
+                <ul class="space-y-3 text-lg text-gray-700 list-disc pl-6 marker:text-blue-500">
+                    <li>Dogs can help people feel calmer</li>
+                    <li>Being with animals can lower stress-related reactions</li>
+                    <li>Dogs give emotional support and comfort</li>
+                    <li>Dog ownership is linked to lower feelings of social isolation</li>
+                </ul>
+            </div>
+            <div class="bg-white border-4 border-dashed border-gray-200 p-6 rounded-xl space-y-4">
+                <div class="flex items-center justify-between bg-red-50 p-3 rounded-lg"><span class="font-bold text-red-800">Stress</span> <i class="fa-solid fa-arrow-down-long text-xl text-red-600"></i></div>
+                <div class="flex items-center justify-between bg-orange-50 p-3 rounded-lg"><span class="font-bold text-orange-800">Loneliness</span> <i class="fa-solid fa-arrow-down-long text-xl text-orange-600"></i></div>
+                <div class="flex items-center justify-between bg-green-50 p-3 rounded-lg"><span class="font-bold text-green-800">Comfort</span> <i class="fa-solid fa-arrow-up-long text-xl text-green-600"></i></div>
+                <div class="flex items-center justify-between bg-blue-50 p-3 rounded-lg"><span class="font-bold text-blue-800">Connection</span> <i class="fa-solid fa-arrow-up-long text-xl text-blue-600"></i></div>
+            </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 6: FUN -->
+      <section class="slide flex-col justify-center h-full max-w-4xl mx-auto" data-slide="6" aria-hidden="true">
+        <h2 class="text-blue-600 font-bold tracking-wider uppercase text-sm mb-2">Engagement</h2>
+        <h1 class="text-3xl sm:text-5xl font-bold text-gray-900 mb-8 leading-tight">Dogs bring more daily fun and interaction</h1>
+        <h3 class="text-2xl font-semibold text-gray-800 text-center mb-8">Dogs don't just watch life happen — they join in.</h3>
+
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-6 mb-8 text-center text-gray-600">
+            <div class="flex flex-col items-center"><i class="fa-solid fa-baseball text-4xl mb-2 text-orange-400"></i><p class="font-bold">Fetch</p></div>
+            <div class="flex flex-col items-center"><i class="fa-solid fa-circle-notch text-4xl mb-2 text-gray-400"></i><p class="font-bold">Frisbee</p></div>
+            <div class="flex flex-col items-center"><i class="fa-solid fa-person-walking text-4xl mb-2 text-green-400"></i><p class="font-bold">Walk</p></div>
+            <div class="flex flex-col items-center"><i class="fa-solid fa-mountain-sun text-4xl mb-2 text-brown-400"></i><p class="font-bold">Hike</p></div>
+            <div class="flex flex-col items-center col-span-2 md:col-span-1"><i class="fa-solid fa-rope text-4xl mb-2 text-red-400"></i><p class="font-bold">Tug-of-war</p></div>
+        </div>
+
+        <ul class="space-y-3 text-lg text-gray-700 list-none text-center">
+            <li>Dogs play games, learn new tricks, and react to people in energetic ways</li>
+            <li>They can join family activities indoors and outdoors</li>
+            <li>Their excitement makes everyday moments more fun</li>
+        </ul>
+      </section>
+
+      <!-- SLIDE 7: COMPARISON -->
+      <section class="slide flex-col justify-center h-full max-w-5xl mx-auto" data-slide="7" aria-hidden="true">
+        <h2 class="text-blue-600 font-bold tracking-wider uppercase text-sm mb-2">Head-to-Head</h2>
+        <h1 class="text-3xl sm:text-5xl font-bold text-gray-900 mb-6 leading-tight">Dogs vs. Cats: which pet gives more back?</h1>
+        <h3 class="text-xl font-medium text-gray-700 mb-8 bg-blue-50 inline-block px-4 py-2 rounded-lg">If the goal is companionship, activity, and teamwork — dogs win.</h3>
+
+        <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm mb-6">
+          <table class="w-full text-left text-base">
+            <thead class="bg-gray-100 text-sm uppercase text-gray-600">
+              <tr>
+                <th class="p-4">Category</th>
+                <th class="p-4 text-blue-600 font-bold"><i class="fa-solid fa-dog mr-2"></i>Dogs</th>
+                <th class="p-4"><i class="fa-solid fa-cat mr-2"></i>Cats</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              <tr>
+                <td class="p-4 font-bold text-gray-800">Companionship</td>
+                <td class="p-4 text-gray-700 bg-blue-50/50">Very people-focused</td>
+                <td class="p-4 text-gray-500">Often more independent</td>
+              </tr>
+              <tr>
+                <td class="p-4 font-bold text-gray-800">Exercise</td>
+                <td class="p-4 text-gray-700 bg-blue-50/50">Encourage walks and outdoor activity</td>
+                <td class="p-4 text-gray-500">Usually less active with owners</td>
+              </tr>
+              <tr>
+                <td class="p-4 font-bold text-gray-800">Training</td>
+                <td class="p-4 text-gray-700 bg-blue-50/50">Can learn many commands and routines</td>
+                <td class="p-4 text-gray-500">Usually harder to train for shared routines</td>
+              </tr>
+              <tr>
+                <td class="p-4 font-bold text-gray-800">Emotional support</td>
+                <td class="p-4 text-gray-700 bg-blue-50/50">Strong comfort and social support</td>
+                <td class="p-4 text-gray-500">Can comfort too, but often less interactive</td>
+              </tr>
+              <tr>
+                <td class="p-4 font-bold text-gray-800">Play</td>
+                <td class="p-4 text-gray-700 bg-blue-50/50">Active, social, energetic</td>
+                <td class="p-4 text-gray-500">Playful, but usually for shorter periods</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-center text-sm font-medium italic text-gray-500">Fairness line: Cats can still be great pets — but dogs offer more all-around interaction.</p>
+      </section>
+
+      <!-- SLIDE 8: CONCLUSION -->
+      <section class="slide flex-col items-center justify-center h-full text-center max-w-4xl mx-auto" data-slide="8" aria-hidden="true">
+        <div class="inline-block px-4 py-1 mb-4 rounded-full bg-blue-600 text-white font-semibold text-sm">Final Verdict</div>
+        <h1 class="text-4xl sm:text-6xl font-bold text-gray-900 mb-6 leading-tight">Dogs make better pets</h1>
+
+        <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 w-full mb-10 flex flex-wrap gap-3 justify-center text-lg font-bold text-gray-700">
+            <span class="px-3 py-1 bg-white rounded shadow">Best friend</span> <i class="fa-solid fa-plus mt-2 text-blue-300"></i>
+            <span class="px-3 py-1 bg-white rounded shadow">fitness coach</span> <i class="fa-solid fa-plus mt-2 text-blue-300"></i>
+            <span class="px-3 py-1 bg-white rounded shadow">comfort buddy</span> <i class="fa-solid fa-equals mt-2 text-gray-300"></i>
+            <span class="px-4 py-1 bg-blue-600 text-white rounded shadow">DOG</span>
+        </div>
+
+        <ul class="space-y-3 text-lg text-gray-700 list-disc text-left inline-block pl-6 marker:text-blue-500 mb-12">
+            <li>Dogs are loving and loyal</li>
+            <li>They get people moving and outside</li>
+            <li>They can be trained into family routines</li>
+            <li>They help with stress and loneliness</li>
+            <li>They make everyday life more fun</li>
+        </ul>
+
+        <h3 class="text-2xl font-bold text-gray-900 border-b-4 border-blue-500 pb-2 inline-block">If you want a pet that acts like part of the team, dogs are the better choice.</h3>
+      </section>
+    </div>
+
+    <!-- PERSISTENT HUD (Bottom Area) -->
+    <div class="absolute bottom-4 left-4 flex items-center space-x-2 z-10">
+      <!-- Slide Counter -->
+      <span class="bg-white/80 backdrop-blur px-3 py-1 rounded-full text-sm font-semibold shadow border text-gray-600">
+        <span id="current-slide-num">1</span> / 8
+      </span>
+      <!-- Screen Reader Live Region -->
+      <span id="live-region" class="sr-only" aria-live="polite"></span>
+    </div>
+
+    <!-- NAVIGATION BUTTONS (Right) -->
+    <div class="absolute bottom-4 right-4 flex space-x-2 z-10">
+      <button id="btn-prev" class="focus-ring bg-white hover:bg-gray-100 text-gray-800 p-3 rounded-full shadow-lg border disabled:opacity-50 disabled:cursor-not-allowed transition" aria-label="Previous slide" title="Previous (←)">
+        <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+      </button>
+      <button id="btn-next" class="focus-ring bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition" aria-label="Next slide" title="Next (→ or Space)">
+        <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+      </button>
+    </div>
+
+  </main>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const btnNext = document.getElementById('btn-next');
+    const btnPrev = document.getElementById('btn-prev');
+    const currentSlideNum = document.getElementById('current-slide-num');
+    const progressBar = document.getElementById('progress-bar');
+    const liveRegion = document.getElementById('live-region');
+
+    const totalSlides = slides.length;
+    // Handle deep linking via hash, or default to slide 1
+    let currentSlide = Math.max(0, Math.min(totalSlides - 1, (Number(location.hash.replace('#slide-', '')) || 1) - 1));
+
+    function syncHash() {
+      history.replaceState(null, '', `#slide-${currentSlide + 1}`);
+    }
+
+    function updateUI(announce = true) {
+      // Toggle active slide
+      slides.forEach((slide, index) => {
+        const active = index === currentSlide;
+        slide.classList.toggle('active', active);
+        slide.setAttribute('aria-hidden', String(!active));
+      });
+
+      // Update button states
+      btnPrev.disabled = currentSlide === 0;
+      btnNext.disabled = currentSlide === totalSlides - 1;
+
+      // Update counters & progress
+      const displayNum = currentSlide + 1;
+      currentSlideNum.textContent = displayNum;
+      progressBar.style.width = `${(displayNum / totalSlides) * 100}%`;
+      syncHash();
+
+      // Aria announcement for accessibility
+      if (announce) {
+        const currentTitle = slides[currentSlide].querySelector('h1')?.textContent || `Slide ${displayNum}`;
+        liveRegion.textContent = `Showing slide ${displayNum} of ${totalSlides}: ${currentTitle}`;
+      }
+    }
+
+    function goToSlide(index) {
+      const next = Math.max(0, Math.min(totalSlides - 1, index));
+      if (next === currentSlide) return;
+      currentSlide = next;
+      updateUI();
+    }
+
+    const goNext = () => goToSlide(currentSlide + 1);
+    const goPrev = () => goToSlide(currentSlide - 1);
+
+    // Event Listeners for buttons
+    btnNext.addEventListener('click', goNext);
+    btnPrev.addEventListener('click', goPrev);
+
+    // Keyboard Shortcuts for Presentation
+    document.addEventListener('keydown', (e) => {
+      // Ignore shortcut if user is somehow typing in an input
+      if (e.target && ['INPUT', 'TEXTAREA'].includes(e.target.tagName)) return;
+
+      if (e.key === 'ArrowRight' || e.key === ' ') {
+        e.preventDefault();
+        goNext();
+      }
+      else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        goPrev();
+      }
+      else if (e.key === 'Home') {
+        e.preventDefault();
+        goToSlide(0);
+      }
+      else if (e.key === 'End') {
+        e.preventDefault();
+        goToSlide(totalSlides - 1);
+      }
+    });
+
+    // Initialize display on load
+    updateUI(false);
+  </script>
+</body>
+</html>
